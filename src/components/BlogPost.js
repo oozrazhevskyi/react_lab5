@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ArticleRating from './ArticleRating';
 
 export default class BlogPost extends Component {
   render() {
@@ -16,9 +17,14 @@ export default class BlogPost extends Component {
             />
         </div>
         <div className="flex-grow-1 ms-3">
+            <div className='d-flex justify-content-between'>
             <a href={`/blog/${post.id}`}>
               <h5>{post.title}</h5>
             </a>
+            <ArticleRating initRating={post.rating} articleId={post.id}/>
+            </div>
+            <span><b>{post.date}</b></span>
+            
             <p>{post.shortDescription}</p>
         </div>
         </div>

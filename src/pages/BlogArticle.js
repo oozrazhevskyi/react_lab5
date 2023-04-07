@@ -18,7 +18,8 @@ export default function BlogArticle() {
             />
             <Card.Body>
                 <Card.Title>{post.title}</Card.Title>
-                <Card.Subtitle>Category: <a href={`/blog/category/${post.category}`}>{post.category}</a></Card.Subtitle>
+                <Card.Subtitle>Category: <a href={`/blog/?category=${post.category}`}>{post.category}</a></Card.Subtitle>
+                <Card.Subtitle className='mt-1 text-muted'>Published at: {post.date}</Card.Subtitle>
                 <hr/>
                 <Card.Text>{post.fullDescription}</Card.Text>
             </Card.Body>

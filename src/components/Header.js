@@ -172,7 +172,6 @@ export default function Header() {
                 <Route path="/about" element={<About />} />
                 <Route path="/contacts" element={<Contacts />} />
                 <Route path="/blog" element={<Blog />} />
-                <Route path="/blog/category/:category" element={<Blog />} />
                 <Route path="/blog/:id" element={<BlogArticle />} />
                 <Route path="/team/:id" element={<Team />} />
                 <Route path='*' element={<NotFound />}/>

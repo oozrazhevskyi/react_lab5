@@ -26,24 +26,20 @@ function removeUrlParameter(name) {
 }
 
 function dateParse(date){
-  var dmy = [...[...date.split('.')].map(parseInt)];
-  console.log("dateParse",dmy);
-  return new Date(1,1,1);
+  var [day,month,year] = [...[...date.split('.')].map(item=>parseInt(item))];
+  return new Date(year,month,day);
 }
 
 function dateCompare(dateA, dateB) {
   let dateObjectA = dateParse(dateA);
   let dateObjectB = dateParse(dateB);
-  console.log('dateCompare',dateObjectA, dateObjectB);
   return dateObjectB - dateObjectA;
 }
 
 const POSTS_PER_PAGE = 5;
 
 export default function Blog() {
-  // const {category} = useParams('category');
   const query = useQuery();
-  console.log([...query.keys()], [...query.values()], );
   let filteredPosts = posts;
   let category = query.get('category');
   let page = query.get('page');
